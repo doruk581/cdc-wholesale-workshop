@@ -1,0 +1,84 @@
+{
+  "consumer": {
+    "name": "Frontend"
+  },
+  "provider": {
+    "name": "OrdersService"
+  },
+  "interactions": [
+    {
+      "description": "a request for all orders",
+      "providerState": "i have a list of orders",
+      "request": {
+        "method": "GET",
+        "path": "/orders",
+        "headers": {
+          "Accept": "application/json, text/plain, */*"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "firstName": "Erdinç",
+            "lastName": "Özdemir",
+            "quantity": 8,
+            "id": 1,
+            "contentId": "111"
+          },
+          {
+            "firstName": "Doruk",
+            "lastName": "Sü",
+            "quantity": 30,
+            "id": 2,
+            "contentId": "222"
+          },
+          {
+            "firstName": "Salih",
+            "lastName": "Kılıç",
+            "quantity": 39,
+            "id": 3,
+            "contentId": "333"
+          }
+        ]
+      }
+    },
+    {
+      "description": "a request to create order with firstname and lastname",
+      "providerState": "i create a new order",
+      "request": {
+        "method": "POST",
+        "path": "/orders",
+        "headers": {
+          "Content-Type": "application/json;charset=utf-8"
+        },
+        "body": {
+          "firstName": "Erdal",
+          "lastName": "Dalkıran",
+          "quantity": 29,
+          "contentId": "444"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "firstName": "Erdal",
+          "lastName": "Dalkıran",
+          "quantity": 29,
+          "contentId": 29,
+          "id": 4
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
