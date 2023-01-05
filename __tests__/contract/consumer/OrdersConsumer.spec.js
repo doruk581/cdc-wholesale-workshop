@@ -73,7 +73,7 @@ describe("Orders Service", () => {
         firstName: POST_BODY.firstName,
         lastName: POST_BODY.lastName,
         quantity: POST_BODY.quantity,
-        contentId: POST_BODY.quantity,
+        contentId: POST_BODY.contentId,
         id: 4
     }
 
