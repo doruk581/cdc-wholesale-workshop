@@ -15,15 +15,10 @@ server.listen(8081, () => {
             provider: "Orders Service",
             logLevel: "DEBUG",
             providerBaseUrl: SERVER_URL,
-            pactUrls: [
-                path.resolve(
-                  process.cwd(),
-                  "./__tests__/contract/pacts/frontend-ordersservice.json"
-                )
-              ],
+            pactUrls: ['http://localhost:9292/pacts/provider/OrdersService/consumer/Frontend/latest'],
             consumerVersionTags: ["dev"],
             providerVersionTags: ["dev"],
-            publishVerificationResult: false,
+            publishVerificationResult: true,
             providerVersion: "1.0.1"
           }
         return new Verifier(opts).verifyProvider().then(output => {
